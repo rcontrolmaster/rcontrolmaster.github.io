@@ -1,33 +1,145 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
 <meta charset="UTF-8">
-<title>RControl</title>
-<link rel="stylesheet" href="css/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Company Name</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+}
+
+/* 상단 메뉴 */
+header{
+    background:#222;
+    color:white;
+    padding:15px;
+}
+
+header h1{
+    margin:0;
+}
+
+/* 메뉴 */
+nav{
+    margin-top:10px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-right:20px;
+}
+
+/* 내용 영역 */
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:20px;
+}
+
+/* 제품 박스 */
+.products{
+    display:flex;
+    gap:20px;
+}
+
+.product{
+    flex:1;
+    background:#f0f0f0;
+    padding:20px;
+}
+
+/* 푸터 */
+footer{
+    background:#333;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+}
+
+/* 모바일 반응형 */
+
+@media (max-width:768px){
+
+.products{
+    flex-direction:column;
+}
+
+nav a{
+    display:block;
+    margin:5px 0;
+}
+
+}
+
+</style>
+
 </head>
 
 <body>
 
 <header>
-<h1>RControl</h1>
-<p>Industrial Control Solutions</p>
-</header>
+<h1>Company Name</h1>
 
 <nav>
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="products.html">Products</a>
-<a href="contact.html">Contact</a>
+<a href="#">회사소개</a>
+<a href="#">제품</a>
+<a href="#">기술</a>
+<a href="#">문의</a>
 </nav>
 
-<section>
-<h2>Welcome</h2>
-<p>Welcome to our company website.</p>
-</section>
+</header>
+
+
+<div class="container">
+
+<h2>회사 소개</h2>
+
+<p>
+산업용 장비와 제어 시스템을 개발하는 회사입니다.
+</p>
+
+
+<h2>제품</h2>
+
+<div class="products">
+
+<div class="product">
+<h3>제품 A</h3>
+<p>온도 제어 장비</p>
+</div>
+
+<div class="product">
+<h3>제품 B</h3>
+<p>산업용 컨트롤러</p>
+</div>
+
+<div class="product">
+<h3>제품 C</h3>
+<p>센서 시스템</p>
+</div>
+
+</div>
+
+
+<h2>연락처</h2>
+
+<p>
+Email : info@company.com<br>
+Tel : 02-000-0000
+</p>
+
+</div>
+
 
 <footer>
-<p>© 2026 RControl</p>
+© 2026 Company Name
 </footer>
 
 </body>
