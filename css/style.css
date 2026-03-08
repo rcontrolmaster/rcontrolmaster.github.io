@@ -61,6 +61,16 @@ footer{
     margin-top:40px;
 }
 
+.btn{
+    display:inline-block;
+    margin-top:10px;
+    padding:8px 16px;
+    background:#0077cc;
+    color:white;
+    text-decoration:none;
+    border-radius:4px;
+}
+
 /* 모바일 반응형 */
 
 @media (max-width:768px){
