@@ -54,7 +54,7 @@ nav a{
 
 /* 푸터 */
 footer{
-    background:#333;
+    background:#f08a36;
     color:white;
     text-align:center;
     padding:20px;
@@ -75,6 +75,22 @@ footer{
 
 .btn:hover{
     background:#004a99;
+}
+
+
+.item{
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.item img{
+    width: 200px;
+    margin-right: 20px;
+}
+
+.text{
+    font-size:16px;
 }
 
 /* 모바일 반응형 */
