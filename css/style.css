@@ -131,7 +131,7 @@ h2 {
 
 .right-imgTable {
   flex: 1;              
-  width: max-content = 500px; 
+  width: 100%;
   object-fit: cover;
 }
 
@@ -147,5 +147,15 @@ nav a{
     display:block;
     margin:5px 0;
 }
+
+ .containerTable {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .left-imgTable,
+  .right-imgTable {
+    height: 200px;
+  }
 
 }
