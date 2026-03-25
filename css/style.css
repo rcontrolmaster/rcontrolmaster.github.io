@@ -112,7 +112,7 @@ h2 {
 display: flex;
   gap: 10px;
   width: 50%;
-  height: auto;        
+  height: max-content = 500px;        
   align-items: stretch;       
 }
 
