@@ -153,6 +153,9 @@ nav a{
     margin:5px 0;
 }
 
+.imgAlone {
+  width: 80%;
+}
 /*
  .containerTable {
     flex-direction: column;
