@@ -111,7 +111,7 @@ h2 {
 .containerTable {
   display: flex;
   gap: 10px;
-  width: 80%;
+  width: 90%;
   max-width: 800px;
   align-items: stretch;       
 }
@@ -137,7 +137,7 @@ h2 {
 
 
 .imgAlone {
-  width: 100%;
+  width: 90%;
   max-width: 800px;
 }
 /* 모바일 반응형 */
@@ -153,10 +153,6 @@ nav a{
     margin:5px 0;
 }
 
-.imgAlone {
-  width: auto;
-  max-width: 100%;
-}
 /*
  .containerTable {
     flex-direction: column;
