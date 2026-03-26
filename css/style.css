@@ -111,8 +111,8 @@ h2 {
 .containerTable {
   display: flex;
   gap: 10px;
-  width: 60%;
-  height: max-content = 500px;        
+  width: 80%;
+  max-width: 800px;
   align-items: stretch;       
 }
 
@@ -135,6 +135,11 @@ h2 {
   object-fit: cover;
 }
 
+
+.imgAlone {
+  width: 80%;
+  max-width: 800px;
+}
 /* 모바일 반응형 */
 
 @media (max-width:768px){
