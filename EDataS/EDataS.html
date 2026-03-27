@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>RControl - Industrial Inkjet</title>
+<link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+
+<header>
+
+
+<nav>
+<a href ="../index.html">Home</a>
+<a href="../PrintHeadDriver.html">PrintHead Driver</a>
+<a href="../PrintingController.html">Printing Controller</a>
+<a href="../InkDeliverySystem.html">Ink Delivery System</a>
+<a href="../InkjetTest.html">Inkjet Test</a>
+</nav>
+
+</header>
+
+
+<div class="container">
+
+
+<h2>EDataS Controller</h2>
+<h3>Overview</h3>
+<p>EDataS can control a single driver based on the existing PControl architecture.</p>
+<p>• Provides stable communication through a 10/100 Mbps Ethernet connection.<br>
+IP configuration is simple and user-friendly.</p>
+<p>• Utilizes a ring buffer, allowing continuous transmission of the next swath data even during printing.</p>
+<p>• Supports high-efficiency data compression, enabling fast and reliable transfer of large image data.</p>
+
+<img src="EDataS.png" class="imgAlone">
+<img src="EDataSRear.png" class="imgAlone">
+
+<p>• The communication speed of the existing PControl has been improved from 50 Mbps to 66 Mbps, enabling faster performance. For 1024-bit transmission, it supports up to 64 kHz with a transfer time of 15.4 μs.</p>
+
+<p>• The head temperature can be monitored even during printing.</p>
+
+<p>• Spitting and printing can be controlled using an external trigger.<br>
+The width and delay of the trigger output signal can be configured to drive a stroboscope.</p>
+
+<p>• Supports both C# class library DLLs and existing RJET C-style DLLs.</p>
+
+<p>• Equipped with a large 32 MB image buffer.</p>
+
+<p>• A 25-bit encoder counter with an additional 1-bit sign allows representation of negative encoder values.</p>
+
+</div>
+<footer>
+© 2026 RControl,    contact : kjwon@rcontrol.kr
+</footer>
+
+</body>
+</html>
