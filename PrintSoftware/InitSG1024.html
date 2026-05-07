@@ -3,11 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title>RControl</title>
 
-    <link rel="icon" type="image/png" href="RC.png" />
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="icon" type="image/png" href="/RC.png" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
   </head>
 
   <body>
@@ -16,7 +15,7 @@
       style="background-color: chocolate"
     >
       <div class="container-fluid">
-        <a class="navbar-brand" href="index.html"> RControl </a>
+        <a class="navbar-brand" href="/index.html"> RControl </a>
 
         <button
           class="navbar-toggler"
@@ -76,53 +75,49 @@
 
     <div class="container mt-4">
       <!-- introduction -->
+      <div class="bg-white text-dark py-4">
+        <div class="container">
+          <h2 class="fs-3 mb-3">Initialization</h2>
 
-      <h2 class="fs-4">About RControl</h2>
-      <p>
-        RControl develops driver electronics for industrial inkjet printheads,
-        ink supply units, printing controllers, and printing software.
-      </p>
+          <image src="/PrintSoftware/Init.png" class="img-fluid mb-3" />
+          <p>
+            Enter the IP address and channel number of the printing controller
+            and click "INIT" to initialize the connection. <br />
+            Automatically detects the driver type, and displays it in the
+            detected device type field.
+          </p>
 
-      <p>
-        RControl supports companies adopting inkjet technology by providing
-        self-contained inkjet modules.
-      </p>
+          <div class="mb-3">
+            <a
+              href="GetIPandChannel.html"
+              class="btn btn-outline-secondary btn-sm"
+            >
+              How to get IP and Channel Information
+            </a>
+          </div>
 
-      <p>
-        RControl has developed numerous devices for FPD manufacturing and
-        continues to expand inkjet technology into new application fields.
-      </p>
-
-      <h2 class="fs-4">History</h2>
-      <ul>
-        <li>
-          <strong>2012</strong> – Established, developed DPN driver for Trident
-          256 head
-        </li>
-        <li><strong>2013</strong> – Developed Dimatix drivers</li>
-        <li>
-          <strong>2015</strong> – Developed integrated RJET driver system for
-          various printheads
-        </li>
-        <li><strong>2020</strong> – Developed KM1024i drivers</li>
-        <li><strong>2022</strong> – Developed Ink Delivery Systems</li>
-        <li><strong>2024</strong> – Developed Test Printing Systems</li>
-      </ul>
-
-      <h2 class="fs-4">Address</h2>
-      <p>
-        LG Twin House #341<br />
-        6, Seongnam-daero 2-beon-gil, Bundang-gu<br />
-        Seongnam-si, Gyeonggi-do, 13638<br />
-        South Korea
-      </p>
-
-      <h2 class="fs-4">Contact</h2>
-      <p>
-        Email: <a href="mailto:kjwon@rcontrol.kr">kjwon@rcontrol.kr</a><br />
-        Website:
-        <a href="http://www.rcontrol.kr" target="_blank">www.rcontrol.kr</a>
-      </p>
+          <p>
+            After successful initialization, waveform settings can be configured
+            for each channel. <br />
+            Editing the waveform settings allows for precise control over the
+            ink ejection process, enabling optimization of print quality and
+            performance. <br />
+            Click "download head" to set all the configured waveform settings to
+            the printhead driver. <br />
+          </p>
+          <img src="/PrintSoftware/setFG.png" class="img-fluid mb-3" />
+          <p>
+            RD_SG1024_V8 provides 8 independently programmable waveform
+            channels.<br />
+            Each channel is assigned to a corresponding row of the printhead.
+            <br />
+            If you checked the "copy this to all" option and click "download
+            head", the settings of the current channel will be copied to all
+            other channels. <br />
+          </p>
+          <image src="/PrintSoftware/initSG1024.gif" class="img-fluid mb-3" />
+        </div>
+      </div>
     </div>
 
     <footer class="border-top mt-5 pt-3 text-center">
