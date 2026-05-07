@@ -1,102 +1,185 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <title>RControl</title>
 
-<title>RControl - Industrial Inkjet</title>
-<link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="RC.png" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+  </head>
 
-</head>
+  <body>
+    <nav
+      class="navbar fixed-top navbar-expand-lg navbar-dark"
+      style="background-color: chocolate"
+    >
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html"> RControl </a>
 
-<body>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-<header>
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="PrintHeadDriver.html">
+                PrintHead Driver
+              </a>
+            </li>
 
+            <li class="nav-item">
+              <a class="nav-link" href="PrintingController.html">
+                Printing Controller
+              </a>
+            </li>
 
-<nav>
-<a href ="index.html">Home</a>
-<a href="PrintingController.html">Printing Controller</a>
-<a href="InkDeliverySystem.html">Ink Delivery System</a>
-<a href="InkjetTest.html">Inkjet Test</a>
-</nav>
+            <li class="nav-item">
+              <a class="nav-link" href="InkDeliverySystem.html">
+                Ink Delivery System
+              </a>
+            </li>
 
-</header>
+            <li class="nav-item">
+              <a class="nav-link" href="InkjetTest.html"> Inkjet Test </a>
+            </li>
 
+            <li class="nav-item">
+              <a class="nav-link" href="Custom.html"> Custom Solutions </a>
+            </li>
 
-<div class="container">
+            <li class="nav-item">
+              <a class="nav-link" href="about.html"> About Us </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
+    <script src="js/bootstrap.bundle.min.js"></script>
 
-<h2>Drivers for KonicaMinolta PrintHeads</h2>
+    <!-- top spacing because of fixed navbar -->
+    <div style="height: 70px"></div>
 
-<div class="products">
+    <div class="container mt-4">
+      <!-- introduction -->
+      <div class="bg-white text-dark py-4">
+        <div class="container">
+          <h2 class="mb-3">Drivers for KonicaMinolta PrintHeads</h2>
 
-<div class="product">
-<img src="images/KM1024iConnect.png" class="product-img">
-<h3>pcKM1024i for KM1024i</h3>
-<p>Direct connection to the printhead. <br>
-    Compact size for easy space utilization. <br>
-    No cable means less signal loss and better performance. <br>
-</p>
-<a href="KM1024i/pcKM1024i.html" class="btn">read more...</a>
-</div>
+          <p class="fs-5">
+            drivers for KonicaMinolta KM1024i and KM1024a printheads.
+          </p>
+        </div>
+      </div>
 
-<div class="product">
-<img src="images/pcKM1024iCBConnect.png" class="product-img">
-<h3>pcKM1024iCB for KM1024i</h3>
-<p>cable connection to the printhead. <br>
-    Cable connection allows for more flexible installation. <br>
-</p>
-<a href="KM1024i/pcKM1024iCB.html" class="btn">read more...</a>
-</div>
+      <!-- first row -->
+      <div class="row g-4">
+        <div class="col-md-4">
+          <h4 class="fs-4">pcKM1024i for KM1024ir</h4>
 
+          <img src="images/KM1024iConnect.png" class="img-fluid rounded" />
 
-<div class="product">
-<img src="images/KM1024aDriver.png" class="product-img">
-<h3>pcKM1024a for KM1024a</h3>
-<p>Print head driver for KonicaMinolta KM1024a printhead.</p>
-<a href="KM1024i/pcKM1024a.html" class="btn">read more...</a>
-</div>
-</div>
+          <p class="fs-5 mt-3">
+            Direct connection to the printhead. <br />
+            Compact size for easy space utilization. <br />
+            No cable means less signal loss and better performance. <br />
+          </p>
 
-<hr>
+          <a
+            href="KM1024i/pcKM1024i.html"
+            class="btn btn-outline-primary btn-sm"
+          >
+            Read More...
+          </a>
+        </div>
 
-<h2>Drivers for Dimatix PrintHeads</h2>
-<div class="products">
+        <div class="col-md-4">
+          <h4 class="fs-4">pcKM1024iCB for KM1024i</h4>
 
-<div class="product">
-<img src="images/SG1024Driver.png" class="product-img">
-<h3>RD1024 for SG1024</h3>
-<p>1024 nozzle print head</p>
-<a href="Dimatix/RD1024.html" class="btn">read more...</a>
-</div>
+          <img src="images/pcKM1024iCBConnect.png" class="img-fluid rounded" />
 
+          <p class="fs-5 mt-3">
+            cable connection to the printhead. <br />
+            Cable connection allows for more flexible installation. <br />
+          </p>
 
+          <a
+            href="KM1024i/pcKM1024iCB.html"
+            class="btn btn-outline-primary btn-sm"
+          >
+            Read More...
+          </a>
+        </div>
 
+        <div class="col-md-4">
+          <h4 class="fs-4">pcKM1024a for KM1024a</h4>
 
-<div class="product">
-<img src="images/DPN16.png" class="product-img">
-<h3>DPN16 Driver for DMC 16 nozzle printhead</h3>
-<p>16 nozzle print head</p>
-<p>DPN16 is a DriverPerNozzle driver of 16 independently programmable waveforms. </p>
-<a href="Dimatix/RD16.html" class="btn">read more...</a>
-</div>
+          <img src="images/KM1024aDriver.png" class="img-fluid rounded" />
 
+          <p class="fs-5 mt-3">
+            Print head driver for KonicaMinolta KM1024a printhead.
+          </p>
 
-<div class="product">
-</div>
+          <a
+            href="KM1024a/pcKM1024a.html"
+            class="btn btn-outline-primary btn-sm"
+          >
+            Read More...
+          </a>
+        </div>
+      </div>
 
+      <!-- introduction -->
+      <div class="bg-white text-dark py-4">
+        <div class="container">
+          <h2 class="mb-3">Drivers for Dimatix PrintHeads</h2>
 
-</div>
+          <p class="fs-5">drivers for Dimatix printheads.</p>
+        </div>
+      </div>
+      <!-- second row -->
+      <div class="row g-4 mt-1">
+        <div class="col-md-4">
+          <h4 class="fs-4">RD1024 for SG1024</h4>
 
-<hr>
+          <img src="images/SG1024Driver.png" class="img-fluid rounded" />
 
+          <p class="fs-5 mt-3">1024 nozzle print head</p>
 
+          <a href="Dimatix/RD1024.html" class="btn btn-outline-primary btn-sm">
+            Read More...
+          </a>
+        </div>
 
+        <div class="col-md-4">
+          <h4 class="fs-4">DPN16 Driver for DMC 16 nozzle printhead</h4>
 
-<footer>
-© 2026 RControl,    contact : kjwon@rcontrol.kr
-</footer>
+          <img src="images/DPN16.png" class="img-fluid rounded" />
 
-</body>
+          <p class="fs-5 mt-3">
+            16 nozzle print head<br />
+            DPN16 is a DriverPerNozzle driver of 16 independently programmable
+            waveforms.
+          </p>
+
+          <a href="Dimatix/DPN16.html" class="btn btn-outline-primary btn-sm">
+            Read More...
+          </a>
+        </div>
+
+        <!-- empty column -->
+        <div class="col-md-4"></div>
+      </div>
+    </div>
+
+    <footer class="border-top mt-5 pt-3 text-center">
+      © 2026 RControl. All rights reserved.
+    </footer>
+  </body>
 </html>
