@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RControl</title>
+
+    <link rel="icon" type="image/png" href="/RC.png" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+  </head>
+
+  <body>
+    <nav
+      class="navbar fixed-top navbar-expand-lg navbar-dark"
+      style="background-color: chocolate"
+    >
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/index.html"> RControl </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="/PrintHeadDriver.html">
+                PrintHead Driver
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/PrintingController.html">
+                Printing Controller
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/PrintSoftware/PrintSoftware.html">
+                Printing Software
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/InkDeliverySystem.html">
+                Ink Delivery System
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/InkjetTest.html"> Inkjet Test </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/Custom.html"> Custom Solutions </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/about.html"> About Us </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <script src="/js/bootstrap.bundle.min.js"></script>
+
+    <!-- top spacing because of fixed navbar -->
+    <div style="height: 70px"></div>
+
+    <div class="container mt-4">
+      <!-- introduction -->
+      <div class="bg-white text-dark py-4">
+        <div class="container">
+          <h2 class="fs-3 mb-3">Initialization of pcKM1024i(CB)</h2>
+
+          <image src="/PrintSoftware/init.png" class="img-fluid mb-3" />
+          <p>
+            Enter the IP address and channel number of the printing controller
+            and click "INIT" to initialize the connection. <br />
+            Automatically detects the driver type, and displays it in the
+            detected device type field.
+          </p>
+
+          <div class="mb-3">
+            <a
+              href="\GData\GetIPandChannel.html"
+              class="btn btn-outline-secondary btn-sm"
+            >
+              How to get IP and Channel Information
+            </a>
+          </div>
+
+          <p>
+            After successful initialization, waveform settings can be
+            configured. <br />
+          </p>
+          <img src="/PrintSoftware/setFGKM.png" class="img-fluid mb-3" />
+
+          <h3 class="fs-4 mb-3">Waveform generals</h3>
+          <img src="/PrintSoftware/KMwaveform.png" class="img-fluid mb-3" />
+          <ul>
+            <li>
+              The <strong>stir</strong> waveform is disabled by default and can
+              be enabled if required.
+            </li>
+
+            <li>
+              In <strong>binary printing</strong>, only the
+              <strong>level 1</strong> waveform is output.
+            </li>
+
+            <li>
+              In <strong>grayscale printing</strong>, waveforms are output up to
+              the specified grayscale level.
+            </li>
+          </ul>
+
+          <h3 class="fs-4 mb-3">Voltage setting</h3>
+          <img src="/PrintSoftware/KMVoltage.png" class="img-fluid mb-3" />
+          <p>
+            Sets the voltage of each VH1 and VH2 channel in 0.1&nbsp;V
+            increments.<br />
+            Condition: <strong>5.0 &lt; VH1 &lt; VH2 &lt; 21.0</strong>
+          </p>
+          <img src="/PrintSoftware/KMFactory.png" class="img-fluid mb-3" />
+          <p>
+            Press the <strong>"Read"</strong> button to read the contents of the
+            EEPROM inside the KM1024i printhead and display the
+            factory-optimized values.<br />
+            The <strong>"Read and Load"</strong> button reads the values and
+            automatically loads them into the
+            <strong>VoltageControl</strong> settings above.
+          </p>
+
+          <h3 class="fs-4 mb-3">Pulse setting</h3>
+          <img src="/PrintSoftware/KMPulse.png" class="img-fluid mb-3" />
+          <p>
+            <strong>T2</strong> is the duration of the VH2 voltage, and
+            <strong>T1</strong> is the duration of the VH1 voltage.<br />
+            <strong>Tp</strong> is meaningful only when the grayscale level is
+            greater than or equal to 2.<br />
+            In a multi-drop waveform, it represents the time interval between
+            the end of the VH1 voltage and the start of the next VH2 voltage.
+          </p>
+
+          <h3 class="fs-4 mb-3">Stirring</h3>
+          <img src="/PrintSoftware/KMstir.png" class="img-fluid mb-3" />
+          <p>
+            The jetting waveform is affected by the nozzle on/off pattern, while
+            the <strong>stir</strong> waveform is applied to all nozzles.<br />
+            The stir waveform is disabled by default and can be enabled when
+            required.<br />
+            The voltage consists only of <strong>VH1</strong>, which is
+            maintained for <strong>Ts</strong> duration, followed by
+            <strong>0&nbsp;V</strong> for <strong>Tsp</strong> duration.
+          </p>
+
+          <h3 class="fs-4 mb-3">Greyscale</h3>
+          <img src="/PrintSoftware/KMGreyscale.png" class="img-fluid mb-3" />
+          <p>
+            The <strong>gray scale steps</strong> value ranges from
+            <strong>1</strong> to <strong>7</strong>, where
+            <strong>1</strong> corresponds to binary printing.<br />
+            One additional waveform is added for each grayscale level.<br />
+            If the waveform count should increase by <strong>+2</strong> instead
+            of <strong>+1</strong> at a specific level, enable the
+            <strong>"Double Waveform"</strong> option.
+          </p>
+          <img src="/PrintSoftware/KMGreyDrops.png" class="img-fluid mb-3" />
+          <p>
+            For example, if the settings are configured as shown above:<br />
+            <strong>gray scale steps = 3</strong><br />
+            <strong>Double Waveform L3 = checked</strong>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <footer class="border-top mt-5 pt-3 text-center">
+      © 2026 RControl. All rights reserved.
+    </footer>
+  </body>
+</html>

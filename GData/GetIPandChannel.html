@@ -77,45 +77,56 @@
       <!-- introduction -->
       <div class="bg-white text-dark py-4">
         <div class="container">
-          <h2 class="fs-3 mb-3">Initialization of RD_SG1024</h2>
-
-          <image src="/PrintSoftware/init.png" class="img-fluid mb-3" />
+          <h2 class="fs-3 mb-3">Base Address</h2>
+          <img
+            src="/GData/ConRTL.png"
+            class="img-fluid mb-3"
+            style="max-height: 500px"
+          />
           <p>
-            Enter the IP address and channel number of the printing controller
-            and click "INIT" to initialize the connection. <br />
-            Automatically detects the driver type, and displays it in the
-            detected device type field.
+            For the IP address <strong>192.168.a.b</strong>:<br />
+            <strong>a</strong> is set by bits <strong>7..6</strong>, with a
+            range of <strong>0 ~ 3</strong> and a default value of
+            <strong>0</strong>.<br />
+            <strong>b</strong> is set by bits <strong>5..0</strong>, with a DIP
+            switch range of <strong>0 ~ 32</strong> and a default value of
+            <strong>100</strong>.<br />
+            The actual value of <strong>b</strong> is calculated as
+            <strong>(DIP switch bits 5..0) × 4</strong> to support 2-bit
+            expansion.<br />
+
+            The default IP address is <strong>192.168.0.100</strong>,
+            corresponding to the DIP switch setting
+            <strong>00011001</strong> (bit7..bit0).<br />
+
+            After changing the DIP switch settings, power must be turned off and
+            on again for the changes to take effect.
           </p>
 
-          <div class="mb-3">
-            <a
-              href="GetIPandChannel.html"
-              class="btn btn-outline-secondary btn-sm"
-            >
-              How to get IP and Channel Information
-            </a>
-          </div>
-
+          <h2 class="fs-3 mb-3">IP Address and Channel</h2>
+          <img
+            src="/GData/GPCon2.png"
+            class="img-fluid mb-3"
+            style="max-height: 500px"
+          />
           <p>
-            After successful initialization, waveform settings can be configured
-            for each channel. <br />
-            Editing the waveform settings allows for precise control over the
-            ink ejection process, enabling optimization of print quality and
-            performance. <br />
-            Click "download head" to set all the configured waveform settings to
-            the printhead driver. <br />
+            The IP address can be configured using the base address and the DIP
+            switch value.<br />
+            If the DIP switch value of the GPCon2 module is <strong>x</strong>,
+            the IP address of the GPCon2 module becomes
+            <strong>100 + x</strong>.<br />
+            The channel numbering is defined as indicated on the GPCon2
+            module.<br />
           </p>
-          <img src="/PrintSoftware/setFG.png" class="img-fluid mb-3" />
           <p>
-            RD_SG1024_V8 provides 8 independently programmable waveform
-            channels.<br />
-            Each channel is assigned to a corresponding row of the printhead.
-            <br />
-            If you checked the "copy this to all" option and click "download
-            head", the settings of the current channel will be copied to all
-            other channels. <br />
+            For example, when the base address is
+            <strong>192.168.0.100</strong> and the GPCon2 DIP switch value is
+            <strong>1</strong>, the resulting IP address becomes
+            <strong>192.168.0.101</strong>.<br />
+            In this case, the upper port (<strong>ch0</strong>) corresponds to
+            <strong>channel = 0</strong>, and the lower port corresponds to
+            <strong>channel = 1</strong>.
           </p>
-          <image src="/PrintSoftware/initSG1024.gif" class="img-fluid mb-3" />
         </div>
       </div>
     </div>
