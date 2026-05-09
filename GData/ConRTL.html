@@ -1,52 +1,188 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RControl</title>
 
-<title>RControl - Industrial Inkjet</title>
-<link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/png" href="/RC.png" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+  </head>
 
-</head>
+  <body>
+    <nav
+      class="navbar fixed-top navbar-expand-lg navbar-dark"
+      style="background-color: chocolate"
+    >
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/index.html"> RControl </a>
 
-<body>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-<header>
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/PrintHeadDriver.html">
+                PrintHead Driver
+              </a>
+            </li>
 
+            <li class="nav-item">
+              <a class="nav-link active" href="/PrintingController.html">
+                Printing Controller
+              </a>
+            </li>
 
-<nav>
-<a href ="../index.html">Home</a>
-<a href="../PrintHeadDriver.html">PrintHead Driver</a>
-<a href="../PrintingController.html">Printing Controller</a>
-<a href="../InkDeliverySystem.html">Ink Delivery System</a>
-<a href="../InkjetTest.html">Inkjet Test</a>
-</nav>
+            <li class="nav-item">
+              <a class="nav-link" href="/PrintSoftware/PrintSoftware.html">
+                Printing Software
+              </a>
+            </li>
 
-</header>
+            <li class="nav-item">
+              <a class="nav-link" href="/InkDeliverySystem.html">
+                Ink Delivery System
+              </a>
+            </li>
 
+            <li class="nav-item">
+              <a class="nav-link" href="/InkjetTest.html"> Inkjet Test </a>
+            </li>
 
-<div class="container">
+            <li class="nav-item">
+              <a class="nav-link" href="/Custom.html"> Custom Solutions </a>
+            </li>
 
+            <li class="nav-item">
+              <a class="nav-link" href="/about.html"> About Us </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-<h2>GData ConRTL</h2>
-<h3>Overview</h3>
-<p>● The ConRTL provides gigabit Ethernet connectivity and power supply for the GData bus system.   </p>
-<p>● It serves as the central hub for data communication and power distribution to the connected GData modules.</p>
-<p>● The ConRTL is designed to ensure reliable and efficient operation of the GData system, making it suitable for industrial inkjet applications that require high-speed data transfer and robust performance.</p>     
+    <script src="/js/bootstrap.bundle.min.js"></script>
 
-<img src="ConRTL.png" class="imgAlone">
+    <!-- top spacing because of fixed navbar -->
+    <div style="height: 70px"></div>
 
-<h2>Module Information</h2>
-<p>● Transfer rate : 1 Gbps</p>
-<p>● Power supply : 24V DC</p>
-<p>● Base IP address can be configured via DIP switches</p>
+    <div class="container mt-4">
+      <!-- introduction -->
+      <div class="bg-white text-dark py-4">
+        <div class="container">
+          <h2 class="fs-3 mb-3">GData ConRTL</h2>
 
+          <p>
+            ConRTL provides Gigabit Ethernet connectivity and 24&nbsp;V DC power
+            to all modules in the GData system.
+          </p>
+          <div class="row g-4">
+            <div class="col-lg-4">
+              <img
+                src="/GData/ConRTL.png"
+                class="img-fluid mb-3"
+                style="max-height: 500px"
+              />
+            </div>
 
-</div>
-<footer>
-© 2026 RControl,    contact : kjwon@rcontrol.kr
-</footer>
+            <div class="col-lg-4">
+              <ul>
+                <li>
+                  <strong>Gigabit Ethernet Switch</strong><br />
+                  Provides communication between the host PC and GData modules
+                  through the GDataBus backplane.<br />
 
-</body>
+                  The base address of <strong>ConRTL</strong> can be configured
+                  easily using the DIP switch.
+                </li>
+
+                <li>
+                  <strong>Power</strong><br />
+                  +24&nbsp;V DC power is distributed to the modules through the
+                  backplane.<br />
+
+                  For convenience, two types of power connectors are provided.
+                  Both connectors are internally connected.
+                  <ul>
+                    <li>
+                      <strong>Molex Connector</strong><br />
+                      Part No. :
+                      <strong>
+                        <a
+                          href="https://www.mouser.kr/ProductDetail/Molex/39-30-1020?qs=tRPrwvvr%2Fuj45jNVCpHEJA%3D%3D"
+                          target="_blank"
+                        >
+                          0039301020
+                        </a>
+                        (5569-2) </strong
+                      ><br />
+                      Pin 1 : GND<br />
+                      Pin 2 : +24&nbsp;V DC<br />
+                      <img
+                        src="/GData/Molex2Pin.png"
+                        class="img-fluid mb-3"
+                        style="width: 50%"
+                      />
+                    </li>
+                    <li>
+                      <strong>Barrel Connector</strong><br />
+                      Part No. :
+                      <strong>
+                        <a
+                          href="https://www.digikey.kr/en/products/detail/tensility-international-corp/54-00167/10459295"
+                          target="_blank"
+                        >
+                          54-00167
+                        </a></strong
+                      ><br />
+                      ID : 2.1&nbsp;mm<br />
+                      OD : 5.5&nbsp;mm<br />
+                      Imax : 5&nbsp;A
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <h3 class="fs-5 mb-3">Base Address setting</h3>
+          <p>
+            ConRTL provides the base IP address for the modules in the GData
+            system.<br />
+            The user can change the IP address range by configuring the
+            <strong>GPCon</strong> base address setting.
+          </p>
+          <p>
+            For the IP address <strong>192.168.a.b</strong>:<br />
+            <strong>a</strong> is set by bits <strong>7..6</strong>, with a
+            range of <strong>0 ~ 3</strong> and a default value of
+            <strong>0</strong>.<br />
+            <strong>b</strong> is set by bits <strong>5..0</strong>, with a DIP
+            switch range of <strong>0 ~ 32</strong> and a default value of
+            <strong>100</strong>.<br />
+            The actual value of <strong>b</strong> is calculated as
+            <strong>(DIP switch bits 5..0) × 4</strong> to support 2-bit
+            expansion.<br />
+
+            The default IP address is <strong>192.168.0.100</strong>,
+            corresponding to the DIP switch setting
+            <strong>00011001</strong> (bit7..bit0).<br />
+
+            After changing the DIP switch settings, power must be turned off and
+            on again for the changes to take effect.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <footer class="border-top mt-5 pt-3 text-center">
+      © 2026 RControl. All rights reserved.
+    </footer>
+  </body>
 </html>

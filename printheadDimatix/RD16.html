@@ -1,59 +1,111 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>RControl - Industrial Inkjet</title>
-<link rel="stylesheet" href="../css/style.css">
+    <title>RControl</title>
 
-</head>
+    <link rel="icon" type="image/png" href="/RC.png" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+  </head>
 
-<body>
+  <body>
+    <nav
+      class="navbar fixed-top navbar-expand-lg navbar-dark"
+      style="background-color: chocolate"
+    >
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/index.html"> RControl </a>
 
-<header>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="/PrintHeadDriver.html">
+                PrintHead Driver
+              </a>
+            </li>
 
-<nav>
-<a href ="../index.html">Home</a>
-<a href="../PrintHeadDriver.html">PrintHead Driver</a>
-<a href="../PrintingController.html">Printing Controller</a>
-<a href="../InkDeliverySystem.html">Ink Delivery System</a>
-<a href="../InkjetTest.html">Inkjet Test</a>
-<a href="../Custom.html">Custom Solutions</a>
-<a href="../about.html">About</a>
-</nav>
+            <li class="nav-item">
+              <a class="nav-link" href="/PrintingController.html">
+                Printing Controller
+              </a>
+            </li>
 
-</header>
+            <li class="nav-item">
+              <a class="nav-link" href="/PrintSoftware/PrintSoftware.html">
+                Printing Software
+              </a>
+            </li>
 
+            <li class="nav-item">
+              <a class="nav-link" href="/InkDeliverySystem.html">
+                Ink Delivery System
+              </a>
+            </li>
 
-<div class="container">
+            <li class="nav-item">
+              <a class="nav-link" href="/InkjetTest.html"> Inkjet Test </a>
+            </li>
 
+            <li class="nav-item">
+              <a class="nav-link" href="/Custom.html"> Custom Solutions </a>
+            </li>
 
-<h2>DPN16 Driver for DMC 16 Nozzle Printhead</h2>
-<h3>Overview</h3>
-<p>● The DPN16 is a DriverPerNozzle driver with 16 independently programmable waveforms.</p>
-<p>● It provides precise control over each nozzle for optimal print quality.</p>
-<p>● The DPN16 is used with <a href="../GData/GDataController.html">GData Controller</a>.</p>
+            <li class="nav-item">
+              <a class="nav-link" href="/about.html"> About Us </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
+    <script src="/js/bootstrap.bundle.min.js"></script>
 
+    <!-- top spacing because of fixed navbar -->
+    <div style="height: 70px"></div>
 
-<img src="RD16P.png" class="imgAlone">
-<img src="DPN16Waveform.png" class="imgAlone">
+    <div class="container mt-4">
+      <!-- introduction -->
+      <div class="bg-white text-dark py-4">
+        <div class="container">
+          <h2 class="fs-3 mb-3">DPN16 Driver for DMC 16 Nozzle Printhea</h2>
 
-<h3>Documents</h3>
-<p><a href="DPN16.pdf" class="btn" target="_blank">DPN16 User Manual (English)</a></p>
+          <h3>Overview</h3>
+          <p>
+            ● The DPN16 is a DriverPerNozzle driver with 16 independently
+            programmable waveforms.
+          </p>
+          <p>
+            ● It provides precise control over each nozzle for optimal print
+            quality.
+          </p>
+          <p>
+            ● The DPN16 is used with
+            <a href="../GData/GDataController.html">GData Controller</a>.
+          </p>
 
-<p><a href="https://rcontrol365-my.sharepoint.com/:u:/g/personal/kjwon_rcontrol_kr/IQAqqQzlgMXeQLA8naxJrvhSAWP2iBOfa3TBG6FZzAqQioY?e=7U0xY0" class="btn" target="_blank">test Application (Windows)</a></p>
+          <img src="RD16P.png" class="img-fluid rounded" style="width: 50%" />
+          <img
+            src="DPN16Waveform.png"
+            class="img-fluid rounded"
+            style="width: 50%"
+          />
+        </div>
+      </div>
+    </div>
 
-<p><a href="https://rcontrol365-my.sharepoint.com/:u:/g/personal/kjwon_rcontrol_kr/IQBZ4OUwyJiJSZlz8kBbW2ZWAUt1b4lu4eecxkVQua9Z4Cs?e=XQ4k6G" class="btn" target="_blank">3D STEP file</a></p>
-
-
-</div>
-<footer>
-© 2026 RControl,    contact : kjwon@rcontrol.kr
-</footer>
-
-</body>
+    <footer class="border-top mt-5 pt-3 text-center">
+      © 2026 RControl. All rights reserved.
+    </footer>
+  </body>
 </html>
