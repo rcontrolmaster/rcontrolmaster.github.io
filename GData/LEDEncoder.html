@@ -7,6 +7,36 @@
 
     <link rel="icon" type="image/png" href="/RC.png" />
     <link rel="stylesheet" href="/css/bootstrap.min.css" />
+
+    <style>
+      :root {
+        --brand: chocolate;
+        --brand-dark: #8a4a17;
+      }
+
+      h2,
+      h3 {
+        color: var(--brand-dark);
+      }
+
+      strong {
+        color: var(--brand-dark);
+      }
+
+      .btn-brand {
+        color: var(--brand-dark);
+        border: 1px solid var(--brand-dark);
+      }
+      .btn-brand:hover {
+        background-color: var(--brand);
+        border-color: var(--brand);
+        color: #fff;
+      }
+
+      .table thead {
+        background-color: #f8f7f4;
+      }
+    </style>
   </head>
 
   <body>
@@ -29,39 +59,7 @@
         <div class="collapse navbar-collapse" id="menu">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link" href="/PrintHeadDriver.html">
-                PrintHead Driver
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link active" href="/PrintingController.html">
-                Printing Controller
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="/PrintSoftware/PrintSoftware.html">
-                Printing Software
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="/InkDeliverySystem.html">
-                Ink Delivery System
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="/InkjetTest.html"> Inkjet Test </a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="/Custom.html"> Custom Solutions </a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="/about.html"> About Us </a>
+              <a class="nav-link" href="/about.html"> About </a>
             </li>
           </ul>
         </div>
@@ -242,7 +240,7 @@
           <div class="mb-3">
             <a
               href="\GData\GetIPandChannel.html"
-              class="btn btn-outline-secondary btn-sm"
+              class="btn btn-brand btn-sm"
             >
               How to get IP and Channel Information
             </a>

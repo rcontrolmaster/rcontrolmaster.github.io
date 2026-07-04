@@ -8,6 +8,64 @@
 
     <link rel="icon" type="image/png" href="/RC.png" />
     <link rel="stylesheet" href="/css/bootstrap.min.css" />
+
+    <style>
+      :root {
+        --brand: chocolate;
+        --brand-dark: #8a4a17;
+      }
+
+      h2,
+      h3 {
+        color: var(--brand-dark);
+      }
+
+      strong {
+        color: var(--brand-dark);
+      }
+
+      .btn-brand {
+        color: var(--brand-dark);
+        border: 1px solid var(--brand-dark);
+      }
+      .btn-brand:hover {
+        background-color: var(--brand);
+        border-color: var(--brand);
+        color: #fff;
+      }
+
+      .table thead {
+        background-color: #f8f7f4;
+      }
+
+      /* consistent image frame so photos of different sizes line up */
+      .feature-media {
+        aspect-ratio: 4 / 3;
+        overflow: hidden;
+        border-radius: 0.5rem;
+        background-color: #f4f1ea;
+      }
+      .feature-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* tall variant: fills the full height of its row (used to match a
+         stacked pair of feature-media blocks next to it) */
+      .feature-media-tall {
+        height: 100%;
+        min-height: 100%;
+        overflow: hidden;
+        border-radius: 0.5rem;
+        background-color: #f4f1ea;
+      }
+      .feature-media-tall img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    </style>
   </head>
 
   <body>
@@ -30,39 +88,7 @@
         <div class="collapse navbar-collapse" id="menu">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link active" href="/PrintHeadDriver.html">
-                PrintHead Driver
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="/PrintingController.html">
-                Printing Controller
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="/PrintSoftware/PrintSoftware.html">
-                Printing Software
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="/InkDeliverySystem.html">
-                Ink Delivery System
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="/InkjetTest.html"> Inkjet Test </a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="/Custom.html"> Custom Solutions </a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="/about.html"> About Us </a>
+              <a class="nav-link" href="/about.html"> About </a>
             </li>
           </ul>
         </div>
@@ -80,26 +106,33 @@
         <div class="container">
           <h2 class="fs-3 mb-3">pcKM1024a Driver for KonicaMinolta KM1024a</h2>
 
-          <h3>Overview</h3>
+          <h3 class="fs-4 mb-3">Overview</h3>
           <p>
             ● The pcKM1024a supports analog waveform control for precise ink
             droplet generation.
           </p>
           <p>
             ● The pcKM1024a is used with
-            <a href="../GData/GDataController.html">GData Controller</a>.
+            <a href="../GData/PrintingController.html">GData Controller</a>.
           </p>
 
-          <img
-            src="pcKM1024a.png"
-            class="img-fluid rounded"
-            style="width: 50%"
-          />
-          <img
-            src="pcKM1024aCase.png"
-            class="img-fluid rounded"
-            style="width: 80%"
-          />
+          <div class="row g-4">
+            <div class="col-lg-4">
+              <div class="feature-media">
+                <img src="pcKM1024a.png" alt="pcKM1024a" />
+              </div>
+            </div>
+          </div>
+
+          <div class="row g-4 mt-1">
+            <div class="col-lg-8">
+              <img
+                src="pcKM1024aCase.png"
+                alt="pcKM1024a case dimensions"
+                class="img-fluid"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
