@@ -1,297 +1,369 @@
 <!doctype html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RControl</title>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="icon" type="image/png" href="/RC.png" />
-    <link rel="stylesheet" href="/css/bootstrap.min.css" />
-  </head>
+<title>RControl</title>
 
-  <body>
-    <nav
-      class="navbar fixed-top navbar-expand-lg navbar-dark"
-      style="background-color: chocolate"
-    >
-      <div class="container-fluid">
-        <a class="navbar-brand" href="/index.html"> RControl </a>
+<link rel="icon" type="image/png" href="/RC.png">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
 
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#menu"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+<style>
+:root{
+    --brand:chocolate;
+    --brand-dark:#8a4a17;
+}
 
-        <div class="collapse navbar-collapse" id="menu">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="/PrintHeadDriver.html">
-                PrintHead Driver
-              </a>
-            </li>
+h2,h3,h4{
+    color:var(--brand-dark);
+}
 
-            <li class="nav-item">
-              <a class="nav-link" href="/PrintingController.html">
-                Printing Controller
-              </a>
-            </li>
+strong{
+    color:var(--brand-dark);
+}
 
-            <li class="nav-item">
-              <a
-                class="nav-link active"
-                href="/PrintSoftware/PrintSoftware.html"
-              >
-                Printing Software
-              </a>
-            </li>
+.btn-brand{
+    color:var(--brand-dark);
+    border:1px solid var(--brand-dark);
+}
 
-            <li class="nav-item">
-              <a class="nav-link" href="/InkDeliverySystem.html">
-                Ink Delivery System
-              </a>
-            </li>
+.btn-brand:hover{
+    background:var(--brand);
+    border-color:var(--brand);
+    color:white;
+}
 
-            <li class="nav-item">
-              <a class="nav-link" href="/InkjetTest.html"> Inkjet Test </a>
-            </li>
+.table thead{
+    background:#f8f7f4;
+}
 
-            <li class="nav-item">
-              <a class="nav-link" href="/Custom.html"> Custom Solutions </a>
-            </li>
+/* ---------- Contents ---------- */
 
-            <li class="nav-item">
-              <a class="nav-link" href="/about.html"> About Us </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+.content-group{
+    margin-bottom:30px;
+}
 
-    <script src="/js/bootstrap.bundle.min.js"></script>
+.content-title{
+    font-size:1.25rem;
+    font-weight:600;
+    color:var(--brand-dark);
+    margin-bottom:12px;
+    border-left:5px solid var(--brand);
+    padding-left:10px;
+}
 
-    <!-- top spacing because of fixed navbar -->
-    <div style="height: 70px"></div>
+.content-btn{
+    display:block;
+    text-decoration:none;
+    color:var(--brand-dark);
 
-    <div class="container mt-4">
-      <!-- introduction -->
-      <div class="bg-white text-dark py-4">
-        <div class="container">
-          <h2 class="fs-3 mb-3">Introduction</h2>
+    background:white;
 
-          <p class="fs-5">RControl Printing Software Library can:</p>
+    border:1px solid #ddd;
+    border-left:5px solid var(--brand);
 
-          <ul class="fs-5">
-            <li>Load bitmap files (BMP, PNG, JPEG, GIF)</li>
+    border-radius:8px;
 
-            <li>
-              Load DXF files and generate internal pixel data according to
-              printing conditions
-            </li>
+    padding:14px 18px;
 
-            <li>
-              Convert image data into print data and transmit it to the
-              printhead driver
-            </li>
+    margin-bottom:10px;
 
-            <li>
-              Providing a large printing memory buffer (upto 2 GB for each
-              printhead)
-            </li>
-            <li>
-              Reducing printing time by eliminating transferring data each time
-              but storing full page data in the memory buffer
-            </li>
-          </ul>
-        </div>
-      </div>
+    font-size:1.05rem;
 
-      <h4 class="fs-5 mt-3 mb-3">Contents</h4>
+    transition:.2s;
+}
 
-      <div class="list-group">
-        <a href="#" class="fs-5 list-group-item list-group-item-action">
-          Initialization
-        </a>
+.content-btn:hover{
 
-        <!-- sub items -->
-        <a
-          href="InitKM1024i.html"
-          class="list-group-item list-group-item-action ms-4"
-        >
-          KM1024i Initialization
-        </a>
+    background:var(--brand);
 
-        <a
-          href="InitSG1024.html"
-          class="list-group-item list-group-item-action ms-4"
-        >
-          SG1024 Initialization
-        </a>
+    color:white;
 
-        <a
-          href="\GData\GetIPandChannel.html"
-          class="list-group-item list-group-item-action ms-4"
-        >
-          Get IP and Channel Information
-        </a>
+    transform:translateX(4px);
 
-        <!-- next main item -->
-        <a
-          href="Spitting.html"
-          class="fs-5 list-group-item list-group-item-action"
-        >
-          Spitting test
-        </a>
+    border-color:var(--brand);
 
-        <a
-          href="BitmapPrint.html"
-          class="fs-5 list-group-item list-group-item-action"
-        >
-          Printing with Bitmap Files
-        </a>
+    box-shadow:0 .4rem .8rem rgba(0,0,0,.15);
 
-        <a
-          href="DXFPrint.html"
-          class="fs-5 list-group-item list-group-item-action"
-        >
-          Printing with DXF Files
-        </a>
+}
 
-        <a
-          href="Heater.html"
-          class="fs-5 list-group-item list-group-item-action"
-        >
-          Printhead Heater Control
-        </a>
+</style>
 
-        <a
-          href="EncoderLED.html"
-          class="fs-5 list-group-item list-group-item-action"
-        >
-          Encoder and LED strobo control
-        </a>
-      </div>
+</head>
 
-      <h4 class="fs-5 mt-5">Development Environment</h4>
+<body>
 
-      <ul class="fs-5">
-        <li>Visual Studio 2022</li>
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark"
+style="background:chocolate">
 
-        <li>.NET Framework 4.7.2</li>
+<div class="container-fluid">
 
-        <li>C#</li>
+<a class="navbar-brand" href="/index.html">
+RControl
+</a>
 
-        <li>WinForms</li>
-      </ul>
+<button
+class="navbar-toggler"
+type="button"
+data-bs-toggle="collapse"
+data-bs-target="#menu">
 
-      <h4 class="fs-4 mt-5">Installation Files</h4>
-      <div class="table-responsive">
-        <table class="table table-bordered table-striped">
-          <thead>
-            <tr>
-              <th>File</th>
-              <th>Description</th>
-            </tr>
-          </thead>
+<span class="navbar-toggler-icon"></span>
 
-          <tbody>
-            <tr>
-              <td class="text-break">AppForRDriver.exe</td>
+</button>
 
-              <td>Test application. Source code available</td>
-            </tr>
+<div class="collapse navbar-collapse" id="menu">
 
-            <tr>
-              <td class="text-break">RDriver.dll</td>
+<ul class="navbar-nav ms-auto">
 
-              <td>RControl driver interface library</td>
-            </tr>
+<li class="nav-item">
+<a class="nav-link" href="/about.html">About</a>
+</li>
 
-            <tr>
-              <td class="text-break">wBitmapLib.dll</td>
+</ul>
 
-              <td>RControl bitmap processing library</td>
-            </tr>
+</div>
 
-            <tr>
-              <td class="text-break">wDXFScanLib.dll</td>
+</div>
 
-              <td>RControl DXF processing library</td>
-            </tr>
+</nav>
 
-            <tr>
-              <td class="text-break">IxMilia.Dxf.dll</td>
+<script src="/js/bootstrap.bundle.min.js"></script>
 
-              <td>DXF file reader library (Open Source)</td>
-            </tr>
+<div style="height:70px"></div>
 
-            <tr>
-              <td class="text-break">
-                System.Runtime.CompilerServices.Unsafe.dll
-              </td>
+<div class="container mt-4">
 
-              <td>Required when using DXF-related functions</td>
-            </tr>
+<div class="bg-white py-4">
 
-            <tr>
-              <td class="text-break">System.Text.Encoding.CodePages.dll</td>
+<h2 class="mb-3">Introduction</h2>
 
-              <td>Required when using DXF-related functions</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+<p class="fs-5">
+RControl Printing Software Library can:
+</p>
 
-      <h4 class="mt-5">Source Code</h4>
-      <div class="table-responsive">
-        <table class="table table-bordered table-striped">
-          <thead>
-            <tr>
-              <th>File</th>
-              <th>Description</th>
-            </tr>
-          </thead>
+<ul class="fs-5">
 
-          <tbody>
-            <tr>
-              <td>wDXFScanEngine.cs</td>
+<li>Load bitmap files (BMP, PNG, JPEG, GIF)</li>
 
-              <td>DXF file processing engine</td>
-            </tr>
+<li>Load DXF files and generate internal pixel data according to printing conditions</li>
 
-            <tr>
-              <td>wDXFScan.cs</td>
+<li>Convert image data into print data and transmit it to the printhead driver</li>
 
-              <td>
-                WinForms custom control based on the DXF processing engine,
-                including zoom/pan viewer functionality
-              </td>
-            </tr>
+<li>Providing a large printing memory buffer (upto 2 GB for each printhead)</li>
 
-            <tr>
-              <td>wBitmapBoxEngine.cs</td>
+<li>Reducing printing time by eliminating transferring data each time but storing full page data in the memory buffer</li>
 
-              <td>Bitmap file processing engine</td>
-            </tr>
+</ul>
 
-            <tr>
-              <td>wBitmapBox.cs</td>
+</div>
 
-              <td>
-                WinForms custom control based on the bitmap processing engine,
-                including zoom/pan viewer functionality
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+<!-- ========================================================= -->
 
-    <footer class="border-top mt-5 pt-3 text-center">
-      © 2026 RControl. All rights reserved.
-    </footer>
-  </body>
+<h3 class="mt-5 mb-4">Contents</h3>
+
+<div class="content-group">
+
+<div class="content-title">
+Initialization
+</div>
+
+<a class="content-btn" href="InitKM1024i.html">
+KM1024i Initialization
+</a>
+
+<a class="content-btn" href="InitSG1024.html">
+SG1024 Initialization
+</a>
+
+<a class="content-btn" href="GData/GetIPandChannel.html">
+Get IP and Channel Information
+</a>
+
+</div>
+
+<div class="content-group">
+
+<div class="content-title">
+Printing
+</div>
+
+<a class="content-btn" href="Spitting.html">
+Spitting Test
+</a>
+
+<a class="content-btn" href="BitmapPrint.html">
+Printing with Bitmap Files
+</a>
+
+<a class="content-btn" href="DXFPrint.html">
+Printing with DXF Files
+</a>
+
+</div>
+
+<div class="content-group">
+
+<div class="content-title">
+Utilities
+</div>
+
+<a class="content-btn" href="Heater.html">
+Printhead Heater Control
+</a>
+
+<a class="content-btn" href="EncoderLED.html">
+Encoder and LED Strobe Control
+</a>
+
+</div>
+
+<!-- ========================================================= -->
+
+<h4 class="mt-5">Development Environment</h4>
+
+<ul class="fs-5">
+
+<li>Visual Studio 2022</li>
+<li>.NET Framework 4.7.2</li>
+<li>C#</li>
+<li>WinForms</li>
+
+</ul>
+
+<h4 class="mt-5">Installation Files</h4>
+
+<div class="table-responsive">
+
+<table class="table table-bordered table-striped">
+
+<thead>
+
+<tr>
+
+<th>File</th>
+<th>Description</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>AppForRDriver.exe</td>
+<td>Test application. Source code available</td>
+
+</tr>
+
+<tr>
+
+<td>RDriver.dll</td>
+<td>RControl driver interface library</td>
+
+</tr>
+
+<tr>
+
+<td>wBitmapLib.dll</td>
+<td>RControl bitmap processing library</td>
+
+</tr>
+
+<tr>
+
+<td>wDXFScanLib.dll</td>
+<td>RControl DXF processing library</td>
+
+</tr>
+
+<tr>
+
+<td>IxMilia.Dxf.dll</td>
+<td>DXF file reader library (Open Source)</td>
+
+</tr>
+
+<tr>
+
+<td>System.Runtime.CompilerServices.Unsafe.dll</td>
+<td>Required when using DXF-related functions</td>
+
+</tr>
+
+<tr>
+
+<td>System.Text.Encoding.CodePages.dll</td>
+<td>Required when using DXF-related functions</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+<h4 class="mt-5">Source Code</h4>
+
+<div class="table-responsive">
+
+<table class="table table-bordered table-striped">
+
+<thead>
+
+<tr>
+
+<th>File</th>
+<th>Description</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>wDXFScanEngine.cs</td>
+<td>DXF file processing engine</td>
+
+</tr>
+
+<tr>
+
+<td>wDXFScan.cs</td>
+<td>WinForms custom control based on the DXF processing engine, including zoom/pan viewer functionality</td>
+
+</tr>
+
+<tr>
+
+<td>wBitmapBoxEngine.cs</td>
+<td>Bitmap file processing engine</td>
+
+</tr>
+
+<tr>
+
+<td>wBitmapBox.cs</td>
+<td>WinForms custom control based on the bitmap processing engine, including zoom/pan viewer functionality</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+<footer class="border-top mt-5 pt-3 text-center">
+© 2026 RControl. All rights reserved.
+</footer>
+
+</body>
 </html>
