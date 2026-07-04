@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RControl</title>
+
+    <link rel="icon" type="image/png" href="/RC.png" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+  </head>
+
+  <body>
+    <nav
+      class="navbar fixed-top navbar-expand-lg navbar-dark"
+      style="background-color: chocolate"
+    >
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/index.html"> RControl </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/PrintHeadDriver.html">
+                PrintHead Driver
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/PrintingController.html">
+                Printing Controller
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                href="/PrintSoftware/PrintSoftware.html"
+              >
+                Printing Software
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/InkDeliverySystem.html">
+                Ink Delivery System
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/InkjetTest.html"> Inkjet Test </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/Custom.html"> Custom Solutions </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/about.html"> About Us </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <script src="/js/bootstrap.bundle.min.js"></script>
+
+    <!-- top spacing because of fixed navbar -->
+    <div style="height: 70px"></div>
+
+    <div class="container mt-4">
+      <!-- introduction -->
+      <div class="bg-white text-dark py-4">
+        <div class="container">
+          <h2 class="fs-3 mb-3">Initialization of RD_SG1024</h2>
+
+          <image src="/PrintSoftware/init.png" class="img-fluid mb-3" />
+          <p>
+            Enter the IP address and channel number of the printing controller
+            and click "INIT" to initialize the connection. <br />
+            Automatically detects the driver type, and displays it in the
+            detected device type field.
+          </p>
+
+          <div class="mb-3">
+            <a
+              href="\GData\GetIPandChannel.html"
+              class="btn btn-outline-secondary btn-sm"
+            >
+              How to get IP and Channel Information
+            </a>
+          </div>
+
+          <p>
+            After successful initialization, waveform settings can be configured
+            for each channel. <br />
+            Editing the waveform settings allows for precise control over the
+            ink ejection process, enabling optimization of print quality and
+            performance. <br />
+            Click "download head" to set all the configured waveform settings to
+            the printhead driver. <br />
+          </p>
+          <img src="/PrintSoftware/setFG.png" class="img-fluid mb-3" />
+          <p>
+            RD_SG1024_V8 provides 8 independently programmable waveform
+            channels.<br />
+            Each channel is assigned to a corresponding row of the printhead.
+            <br />
+            If you checked the "copy this to all" option and click "download
+            head", the settings of the current channel will be copied to all
+            other channels. <br />
+          </p>
+          <image src="/PrintSoftware/initSG1024.gif" class="img-fluid mb-3" />
+        </div>
+      </div>
+    </div>
+
+    <footer class="border-top mt-5 pt-3 text-center">
+      © 2026 RControl. All rights reserved.
+    </footer>
+  </body>
+</html>

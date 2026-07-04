@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RControl</title>
+
+    <link rel="icon" type="image/png" href="/RC.png" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+  </head>
+
+  <body>
+    <nav
+      class="navbar fixed-top navbar-expand-lg navbar-dark"
+      style="background-color: chocolate"
+    >
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/index.html"> RControl </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/PrintHeadDriver.html">
+                PrintHead Driver
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/PrintingController.html">
+                Printing Controller
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                href="/PrintSoftware/PrintSoftware.html"
+              >
+                Printing Software
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/InkDeliverySystem.html">
+                Ink Delivery System
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/InkjetTest.html"> Inkjet Test </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/Custom.html"> Custom Solutions </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/about.html"> About Us </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <script src="/js/bootstrap.bundle.min.js"></script>
+
+    <!-- top spacing because of fixed navbar -->
+    <div style="height: 70px"></div>
+
+    <div class="container mt-4">
+      <!-- introduction -->
+      <div class="bg-white text-dark py-4">
+        <div class="container">
+          <h2 class="fs-3 mb-3">Printing DXF Files</h2>
+
+          <p>
+            RDriver uses the proprietary wDXFScanEngine library to process DXF
+            files.<br />
+          </p>
+
+          <img src="/PrintSoftware/dxf.png" class="img-fluid mb-5" />
+
+          <h3 class="fs-4 mb-3">Position Encoder</h3>
+          <p>
+            Position encoder signals are used to synchronize the printing
+            process with the movement of the printhead. <br />
+            RDriver can process position encoder signals to ensure accurate
+            timing and placement of ink droplets on the substrate. <br />
+            This is particularly important for high-speed printing applications
+            where precise control over the printhead's position
+          </p>
+
+          <img src="/PrintSoftware/Encoder.gif" class="img-fluid mt-3 mb-5" />
+
+          <p>
+            The encoder counter value can be monitored in real time.<br />
+            Press "reset" to set the counter value to zero, and press "update"
+            to read the current counter value.<br />
+            When "auto read" is checked, the "update" function is executed
+            automatically.<br />
+            If a resolution value is entered and the radio button is switched to
+            "in mm", the counter value is converted and displayed in millimeters
+            (mm).
+          </p>
+          <div class="mb-3">
+            <a
+              href="ConnectEncoder.html"
+              class="btn btn-outline-secondary btn-sm"
+            >
+              How to connect Encoder Signals
+            </a>
+          </div>
+
+          <h3 class="fs-4 mb-3">Printing Options</h3>
+          <img
+            src="/PrintSoftware/PrintOption.png"
+            class="img-fluid mt-3 mb-5"
+          />
+          <p>
+            The print options are intended for image processing within the test
+            application and are not used when the user directly makes pixel data
+            from image and write them to the DLL function writePixel().
+          </p>
+
+          <ul>
+            <li>
+              <strong>Pixel Pitch</strong><br />
+              Sets the spacing between printed pixels (dots) during image
+              printing.<br />
+            </li>
+
+            <li>
+              <strong>Print Start Position</strong><br />
+              Specifies the starting position for image printing.<br />
+            </li>
+
+            <li>
+              <strong>Increasing direction</strong><br />
+              Determines the direction in which the printhead moves during
+              printing.<br />
+              Checked means the printhead moves in the increasing direction of
+              the encoder signals, while unchecked means it moves in the
+              decreasing direction.<br />
+            </li>
+
+            <li>
+              <strong>multi-pass</strong><br />
+
+              This value is set to <strong>1</strong> when printing at the
+              native nozzle pitch of the printhead.<br />
+              Enter <strong>N</strong> when printing
+              <strong>N times finer</strong> than the native nozzle resolution
+              of the printhead.
+            </li>
+
+            <li>
+              <strong>Enabled Nozzles</strong><br />
+
+              Selects the nozzles to be used for printing.<br />
+              Configure this option when not all nozzles are intended to be
+              used.
+            </li>
+
+            <li>
+              <strong>Compression level</strong><br />
+
+              <ul>
+                <li>
+                  <strong>0</strong> : No compression is applied when
+                  transferring image data to the printhead controller (PControl
+                  in GPCon2).
+                </li>
+
+                <li>
+                  <strong>1</strong> : Compression is applied only when
+                  identical pixels are repeated.
+                </li>
+
+                <li>
+                  <strong>2</strong> : Additional compression is applied when
+                  the nozzle on/off pattern within a pixel is uniform.
+                </li>
+
+                <li>
+                  <strong>3</strong> : Both compression methods
+                  <strong>1</strong> and <strong>2</strong> are applied.
+                  <strong>(default) </strong>
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+          <h3 class="fs-4 mb-3">Printing Command</h3>
+          <img
+            src="/PrintSoftware/PrintCommand.png"
+            class="img-fluid mt-3 mb-5"
+          />
+          <img src="/PrintSoftware/dxfOption.png" class="img-fluid mt-3 mb-5" />
+          <ul>
+            <li>
+              After configuring all print options, click
+              <strong>"image file"</strong> to choose a DXF file.<br />
+
+              In the <strong>"Load Option"</strong> box, you can enable
+              <strong>"YFlip"</strong> to flip the image vertically.<br />
+              You can also select <strong>"Rotate"</strong> to rotate the
+              image.<br />
+              The <strong>curve</strong> value specifies the tolerance used when
+              converting curves into line segments.<br />
+              The default value is <strong>0.5&nbsp;µm</strong>.
+            </li>
+
+            <li>
+              To print a DXF file, a scanline fill process must first be
+              performed.<br />
+              Set the required <strong>X pitch</strong> and
+              <strong>Y pitch</strong> values, then click the
+              <strong>"Scan"</strong> button.
+            </li>
+
+            <li>
+              You can save the scanned image into a file by clicking
+              <strong>"export to bitmap"</strong>.
+            </li>
+
+            <li>
+              Click the <strong>"init print"</strong> to initialzie printing
+              memory.<br />
+              If you need to preserve the previously stored image data, uncheck
+              the <strong>"resetMemory"</strong> option and click
+              <strong>"init print"</strong>.<br />
+              <strong>(current swath) / (total swath count)</strong> is
+              initialized as <strong>"1/N"</strong>.<br />
+              You can manually change the current swath value to skip the first
+              swath or any other swath as needed.
+            </li>
+            <li>
+              Click the <strong>"download"</strong> button to read the image
+              data corresponding to the first swath and transfer it to the
+              printhead controller (PControl inside GPCon2).<br />
+              When the transfer is completed, <strong>finish = "yes"</strong> is
+              displayed.<br />
+              Pressing the button again automatically selects and transfers the
+              next swath within the selected image.
+            </li>
+
+            <li>
+              <strong>Multi-swath Memory (Page Memory)</strong><br />
+              The printhead controller can receive multiple swaths of data at
+              once.<br />
+              Therefore, by pressing the
+              <strong>"download"</strong> button repeatedly, data for multiple
+              swaths can be transferred in advance.<br />
+              The next swath is automatically loaded through the
+              <strong>start/stop</strong> operation.
+            </li>
+
+            <li>
+              Press the <strong>"Start"</strong> button to switch the driver and
+              controller into print mode.<br />
+              At this time, the printhead should be positioned slightly before
+              the first print position, leaving sufficient margin for the
+              acceleration of the head carriage (stage).
+            </li>
+
+            <li>
+              When the head carriage (stage) moves, printing is performed at the
+              specified encoder positions according to the data transferred by
+              <strong>"download"</strong>.
+            </li>
+
+            <li>
+              Press the <strong>"Stop"</strong> button after printing is
+              completed.<br />
+              The returned message should be checked carefully.<br />
+              If a problem occurred during printing, an error message will be
+              returned.
+              <br />
+
+              <strong>Last Not Reached</strong> : The last print data was not
+              output.<br />
+              Possible causes:
+              <ul>
+                <li>The print direction was incorrect.</li>
+                <li>
+                  The stage did not pass through the first or last print
+                  position.
+                </li>
+              </ul>
+
+              Other messages indicate a serious data error.
+            </li>
+          </ul>
+          <img src="/PrintSoftware/dxfprint.gif" class="img-fluid mb-3" />
+        </div>
+      </div>
+    </div>
+
+    <footer class="border-top mt-5 pt-3 text-center">
+      © 2026 RControl. All rights reserved.
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RControl</title>
+
+    <link rel="icon" type="image/png" href="/RC.png" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+  </head>
+
+  <body>
+    <nav
+      class="navbar fixed-top navbar-expand-lg navbar-dark"
+      style="background-color: chocolate"
+    >
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/index.html"> RControl </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/PrintHeadDriver.html">
+                PrintHead Driver
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link active" href="/PrintingController.html">
+                Printing Controller
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/PrintSoftware/PrintSoftware.html">
+                Printing Software
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/InkDeliverySystem.html">
+                Ink Delivery System
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/InkjetTest.html"> Inkjet Test </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/Custom.html"> Custom Solutions </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/about.html"> About Us </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <script src="/js/bootstrap.bundle.min.js"></script>
+
+    <!-- top spacing because of fixed navbar -->
+    <div style="height: 70px"></div>
+
+    <div class="container mt-4">
+      <!-- introduction -->
+      <div class="bg-white text-dark py-4">
+        <div class="container">
+          <h2 class="fs-3 mb-3">GData GPCon2</h2>
+          <p>GPCon is a printing controller for two head drivers.</p>
+          <div class="row g-4">
+            <div class="col-lg-4">
+              <img
+                src="/GData/GPCon2.png"
+                class="img-fluid mb-3"
+                style="max-height: 500px"
+              />
+            </div>
+
+            <div class="col-lg-4">
+              <ul>
+                <li>
+                  communication channels for RDriver<br />
+                  <strong>pcCOM</strong> protocol (RControl proprietary
+                  protocol)<br />
+                  robust RS422/485 signal levels.<br />
+                </li>
+                <li>
+                  Large printing image buffer (page memory) for ecah channel
+                </li>
+
+                <li>
+                  Each channel can perform spitting and printing independently
+                  (asynchronously).<br />
+                  Alternatively, both channels can operate synchronously using
+                  the bus trigger and encoder signals.
+                </li>
+
+                <li>
+                  Easy implementation using a standard
+                  <strong>RJ45 connector.</strong> <br />
+                  A standard Ethernet cable can be used.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <h3 class="fs-4 mb-3">IP address setting</h3>
+          <p></p>
+
+          <div class="mb-3">
+            <a
+              href="\GData\GetIPandChannel.html"
+              class="btn btn-outline-secondary btn-sm"
+            >
+              How to get IP and Channel Information
+            </a>
+          </div>
+
+          <p>
+            IP address = ConRTL Base Address (DIP switch) + GPCon2
+            Address(Rotary DIP switch).<br />
+            For example, given <strong>Base Address = 192.168.0.100</strong>,
+            the IP address becomes <strong>192.168.0.102</strong> when the
+            rotary DIP switch value of <strong>GPCon2</strong> is
+            <strong>2</strong>.
+          </p>
+
+          <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Channel 1</th>
+                  <th>Channel 2</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>Image Buffer Memory</td>
+                  <td>2 GBytes</td>
+                  <td>2 GBytes</td>
+                </tr>
+
+                <tr>
+                  <td>Spitting Frequency</td>
+                  <td>100 Hz ~ 50 kHz</td>
+                  <td>100 Hz ~ 50 kHz</td>
+                </tr>
+
+                <tr>
+                  <td>Spitting nDrop</td>
+                  <td>1 ~ 1e6 or continuous</td>
+                  <td>1 ~ 1e6 or continuous</td>
+                </tr>
+
+                <tr>
+                  <td>Encoder Counter</td>
+                  <td>26 bit</td>
+                  <td>26 bit</td>
+                </tr>
+
+                <tr>
+                  <td>Ethernet Port</td>
+                  <td>9760</td>
+                  <td>9761</td>
+                </tr>
+
+                <tr>
+                  <td>Connector</td>
+                  <td>RJ45</td>
+                  <td>RJ45</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="border-top mt-5 pt-3 text-center">
+      © 2026 RControl. All rights reserved.
+    </footer>
+  </body>
+</html>

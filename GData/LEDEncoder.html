@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RControl</title>
+
+    <link rel="icon" type="image/png" href="/RC.png" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+  </head>
+
+  <body>
+    <nav
+      class="navbar fixed-top navbar-expand-lg navbar-dark"
+      style="background-color: chocolate"
+    >
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/index.html"> RControl </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/PrintHeadDriver.html">
+                PrintHead Driver
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link active" href="/PrintingController.html">
+                Printing Controller
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/PrintSoftware/PrintSoftware.html">
+                Printing Software
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/InkDeliverySystem.html">
+                Ink Delivery System
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/InkjetTest.html"> Inkjet Test </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/Custom.html"> Custom Solutions </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/about.html"> About Us </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <script src="/js/bootstrap.bundle.min.js"></script>
+
+    <!-- top spacing because of fixed navbar -->
+    <div style="height: 70px"></div>
+
+    <div class="container mt-4">
+      <!-- introduction -->
+      <div class="bg-white text-dark py-4">
+        <div class="container">
+          <h2 class="fs-3 mb-3">GData EncoderLED-u</h2>
+          <p>EncoderLED-u module is a all-in-one timing path controller.</p>
+          <div class="row g-4">
+            <div class="col-lg-4">
+              <img
+                src="/GData/LEDEncoder.png"
+                class="img-fluid mb-3"
+                style="max-height: 500px"
+              />
+            </div>
+
+            <div class="col-lg-4">
+              <ul>
+                <li>
+                  Position Encoder
+                  <ul>
+                    <li>
+                      supports
+                      <strong
+                        >Incremental Encoder with RS422 line driver</strong
+                      >
+                    </li>
+                    <li>standard DSUB 9 pin connector.</li>
+                  </ul>
+                </li>
+                <li>
+                  Trigger generator
+                  <ul>
+                    <li>BNC connector for isolated trigger out.</li>
+                    <li>LED indicator showing the trigger output state.</li>
+                  </ul>
+                </li>
+                <li>
+                  LED strobo light source for dropwatcher.
+                  <ul>
+                    <li>2 channel LED controller.</li>
+                    <li>screw block connector for convenient wiring</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <h3 class="fs-4 mb-3">Encoder controller</h3>
+          <ul>
+            <li>standard Encoder quadrature decoding.</li>
+            <li>Provides 5&nbsp;V power for the encoder sensor.</li>
+            <li>
+              Encoder emulator and counter for testing and experimentation.
+            </li>
+
+            <li>
+              Trigger generator for synchronization and emulation.<br />
+              The trigger signal is routed to the internal bus and to the BNC
+              connector for external synchronization.
+            </li>
+
+            <li>
+              TrigOut<br />
+              Isolated trigger output signal.<br />
+              5&nbsp;V TTL level, 1&nbsp;µs pulse duration (programmable).
+            </li>
+          </ul>
+          <div class="row g-4">
+            <div class="col-lg-4">
+              <img
+                src="/GData/EncoderPin.png"
+                class="img-fluid mb-3"
+                style="max-height: 500px"
+              />
+            </div>
+
+            <div class="col-lg-4">
+              <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                  <thead>
+                    <tr>
+                      <th>Signal</th>
+                      <th>Description</th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    <tr>
+                      <td>AP / AN</td>
+                      <td>A-phase RS422 signal</td>
+                    </tr>
+
+                    <tr>
+                      <td>BP / BN</td>
+                      <td>B-phase RS422 signal</td>
+                    </tr>
+
+                    <tr>
+                      <td>+5V, GNDS</td>
+                      <td>5&nbsp;V output, 400&nbsp;mA</td>
+                    </tr>
+
+                    <tr>
+                      <td>DP / DN</td>
+                      <td>Not used</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p>
+                The <strong>+5V</strong> connection may be left unconnected if
+                not required.
+              </p>
+            </div>
+          </div>
+
+          <h3 class="fs-4 mb-3">Encoder emulator</h3>
+          <p>
+            By providing emulated encoder signals, printing simulation can be
+            performed very easily.
+          </p>
+
+          <h3 class="fs-4 mb-3">Trigger Generator</h3>
+          <ul>
+            <li>frequency : 1 Hz ~ 100 kHz</li>
+
+            <li>count : 67,108,863 max</li>
+
+            <li>
+              trigger out mux : trigger generator output, position encoder 4x
+              signal, position encoder signal R, position encoder signal A
+            </li>
+
+            <li>electrically isolated trigger out signal.</li>
+          </ul>
+
+          <h3 class="fs-4 mb-3">LED strobo light controller</h3>
+          <ul>
+            <li>Independent dual-channel output.</li>
+
+            <li>Supports driving 7&nbsp;W LEDs.</li>
+
+            <li>
+              Delay time and pulse duration can be configured.<br />
+              Clock resolution : 10&nbsp;ns<br />
+              Duration time : &gt; 100&nbsp;ns<br />
+              Supports one-shot and two-shot modes.
+            </li>
+
+            <li>
+              Synchronized by the trigger signal (<strong>trigOut</strong>).
+            </li>
+
+            <li>
+              Terminal block connector : 5.08&nbsp;mm pitch<br />
+              <strong>OQ0454510000G</strong><br /><br />
+
+              a0 : anode channel 0, c0 : cathode channel 0<br />
+              a1 : anode channel 1, c1 : cathode channel 1<br /><br />
+
+              The cathode must not be connected to GND.
+            </li>
+          </ul>
+
+          <h3 class="fs-4 mb-3">IP address setting</h3>
+
+          <div class="mb-3">
+            <a
+              href="\GData\GetIPandChannel.html"
+              class="btn btn-outline-secondary btn-sm"
+            >
+              How to get IP and Channel Information
+            </a>
+          </div>
+
+          <p>
+            IP address = ConRTL Base Address (DIP switch) + GPCon2
+            Address(Rotary DIP switch).<br />
+            For example, given <strong>Base Address = 192.168.0.100</strong>,
+            the IP address becomes <strong>192.168.0.102</strong> when the
+            rotary DIP switch value of <strong>GPCon2</strong> is
+            <strong>2</strong>.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <footer class="border-top mt-5 pt-3 text-center">
+      © 2026 RControl. All rights reserved.
+    </footer>
+  </body>
+</html>
