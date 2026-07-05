@@ -8,96 +8,184 @@
 
     <link rel="icon" type="image/png" href="/RC.png" />
     <link rel="stylesheet" href="/css/bootstrap.min.css" />
+
+    <style>
+      :root {
+        --brand: chocolate;
+        --brand-dark: #8a4a17;
+      }
+
+      /* consistent image frame so PNG sources of different sizes line up */
+      .feature-media {
+        aspect-ratio: 4 / 3;
+        overflow: hidden;
+        border-radius: 0.5rem;
+        background-color: #f4f1ea;
+        max-width: 340px;
+        margin-inline: auto;
+      }
+      .feature-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        padding: 0.75rem;
+      }
+
+      /* smaller frame for paired images shown side by side */
+      .feature-media-sm {
+        aspect-ratio: 4 / 3;
+        overflow: hidden;
+        border-radius: 0.5rem;
+        background-color: #f4f1ea;
+      }
+      .feature-media-sm img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        padding: 0.5rem;
+      }
+
+      .feature-row {
+        padding: 3.5rem 0;
+      }
+      .feature-row:nth-of-type(even) {
+        background-color: #f8f7f4;
+      }
+      .feature-row + .feature-row {
+        border-top: 1px solid #e5e1d8;
+      }
+
+      .feature-row h3 {
+        color: var(--brand-dark);
+      }
+
+      .section-title {
+        color: var(--brand-dark);
+      }
+    </style>
   </head>
 
   <body>
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark"
-style="background:chocolate">
+    <nav
+      class="navbar fixed-top navbar-expand-lg navbar-dark"
+      style="background-color: chocolate"
+    >
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/index.html"> RControl </a>
 
-<div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-<a class="navbar-brand" href="/index.html">
-RControl
-</a>
-
-<button
-class="navbar-toggler"
-type="button"
-data-bs-toggle="collapse"
-data-bs-target="#menu">
-
-<span class="navbar-toggler-icon"></span>
-
-</button>
-
-<div class="collapse navbar-collapse" id="menu">
-
-<ul class="navbar-nav ms-auto">
-
-<li class="nav-item">
-<a class="nav-link" href="/about.html">About</a>
-</li>
-
-</ul>
-
-</div>
-
-</div>
-
-</nav>
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/about.html"> About </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
     <script src="/js/bootstrap.bundle.min.js"></script>
 
     <!-- top spacing because of fixed navbar -->
     <div style="height: 70px"></div>
 
-    <div class="container mt-4">
-      <!-- introduction -->
-      <div class="bg-white text-dark py-4">
-        <div class="container">
-          <h2 class="fs-3 mb-3">MPC7 meniscus pressure controller</h2>
-
-          <h3>Overview</h3>
-          <p>
-            MPC7 is an independent 7-channel pressure controller for
-            backpressure and purge pressure control in industrial inkjet
-            printing applications. MPC7 has pressure generators inside for purge
-            and backpressure control.
-          </p>
-          <p>
-            MPC7 has integrated pressure generators for both backpressure and
-            purge pressure control.
-          </p>
-          <p>
-            For backpressure control, MPC7 can generate negative pressure down
-            to -20 kPa. For purge pressure control, it can generate positive
-            pressure up to 40 kPa. Each channel can be independently controlled,
-            allowing for precise pressure management for multiple print heads.
-          </p>
-          <p>
-            It alas has a anti-reverse flow protection feature with ink
-            detecting sensor for each channel.
-          </p>
-
-          <img src="MPC7Block.png" class="imgAlone" />
-          <hr />
-          <h3>Software Features</h3>
-          <p>
-            Test application and DLL library is provided for easy integration
-            with existing systems.
-          </p>
-          <img src="MPC7Soft.png" width="30%" />
-
-          <hr />
-          <h3>Performance</h3>
-          <p>Purge and backpressure performance specifications:</p>
-          <img src="MPC7Purge.png" width="30%" />
-          <img src="MPC7Back.png" width="30%" />
-        </div>
+    <!-- introduction -->
+    <div class="bg-white text-dark py-5">
+      <div class="container">
+        <h2 class="fs-3 section-title mb-3">
+          MPC7 Meniscus Pressure Controller
+        </h2>
+        <p class="fs-5 mb-0">
+          MPC7 is an independent 7-channel pressure controller for
+          backpressure and purge pressure control in industrial inkjet
+          printing applications. MPC7 has pressure generators inside for
+          purge and backpressure control.
+        </p>
       </div>
     </div>
 
-    <footer class="border-top mt-5 pt-3 text-center">
+    <!-- 1: Overview -->
+    <section class="feature-row">
+      <div class="container">
+        <div class="row align-items-center gy-4">
+          <div class="col-lg-5">
+            <div class="feature-media">
+              <img src="MPC7Block.png" alt="MPC7 block diagram" />
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <h3 class="mt-2">Overview</h3>
+            <p class="fs-5 mt-3">
+              MPC7 has integrated pressure generators for both backpressure
+              and purge pressure control.
+            </p>
+            <p class="fs-5">
+              For backpressure control, MPC7 can generate negative pressure
+              down to -20 kPa. For purge pressure control, it can generate
+              positive pressure up to 40 kPa. Each channel can be
+              independently controlled, allowing for precise pressure
+              management for multiple print heads.
+            </p>
+            <p class="fs-5 mb-0">
+              It also has an anti-reverse flow protection feature with an
+              ink detecting sensor for each channel.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2: Software Features -->
+    <section class="feature-row">
+      <div class="container">
+        <div class="row align-items-center gy-4 flex-lg-row-reverse">
+          <div class="col-lg-5">
+            <div class="feature-media">
+              <img src="MPC7Soft.png" alt="MPC7 software" />
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <h3 class="mt-2">Software Features</h3>
+            <p class="fs-5 mt-3 mb-0">
+              Test application and DLL library is provided for easy
+              integration with existing systems.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3: Performance -->
+    <section class="feature-row">
+      <div class="container">
+        <h3 class="mt-2 mb-4">Performance</h3>
+        <p class="fs-5 mb-4">
+          Purge and backpressure performance specifications:
+        </p>
+        <div class="row gy-4">
+          <div class="col-lg-6">
+            <div class="feature-media-sm">
+              <img src="MPC7Purge.png" alt="MPC7 purge performance" />
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="feature-media-sm">
+              <img src="MPC7Back.png" alt="MPC7 backpressure performance" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="border-top mt-0 py-4 text-center">
       © 2026 RControl. All rights reserved.
     </footer>
   </body>
